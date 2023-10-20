@@ -1,97 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Магазин продуктов</title>
     <style>
+        /* Общие стили */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
+        h1 {
             text-align: center;
+            padding: 20px 0;
         }
-        
-        section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 80vh;
-        }
-        
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            grid-gap: 20px;
-            max-width: 1200px;
-            padding: 0 20px;
+        .container {
+            max-width: 600px;
             margin: 0 auto;
-        }
-
-        .product {
-            background-color: #f5f5f5;
             padding: 20px;
-            border-radius: 5px;
-            text-align: center;
         }
-
+        .product {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
         .product img {
-            max-width: 100%;
-            height: auto;
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            margin-right: 10px;
         }
-
-        .product h3 {
-            margin-top: 10px;
+        .product-name {
+            font-weight: bold;
         }
-
-        .product p {
-            color: #888;
-            margin-bottom: 10px;
+        .product-price {
+            margin-left: auto;
         }
-
-        .product button {
-            background-color: #333;
-            color: #fff;
-            border: none;
+        .buy-button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
             padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .buy-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Адаптивность для смартфонов */
+        @media only screen and (max-width: 600px) {
+            .product {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .product img {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            .buy-button {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
+    <div class="container">
         <h1>Магазин продуктов</h1>
-    </header>
-
-    <section>
-        <div class="products">
-            <div class="product">
-                <img src="product1.jpg" alt="Product 1">
-                <h3>Название продукта 1</h3>
-                <p>Описание продукта 1.</p>
-                <p>Цена: $10</p>
-                <button>Купить</button>
-            </div>
-            <div class="product">
-                <img src="product2.jpg" alt="Product 2">
-                <h3>Название продукта 2</h3>
-                <p>Описание продукта 2.</p>
-                <p>Цена: $15</p>
-                <button>Купить</button>
-            </div>
-            <div class="product">
-                <img src="product3.jpg" alt="Product 3">
-                <h3>Название продукта 3</h3>
-                <p>Описание продукта 3.</p>
-                <p>Цена: $12</p>
-                <button>Купить</button>
+        
+        <div class="product">
+            <img src="product1.jpg" alt="Product 1">
+            <div class="product-details">
+                <h2 class="product-name">Название продукта 1</h2>
+                <p class="product-description">Описание продукта 1</p>
+                <p class="product-price">Цена: $10</p>
+                <a class="buy-button" href="buy.php?id=1">Купить</a>
             </div>
         </div>
-    </section>
+
+        <div class="product">
+            <img src="product2.jpg" alt="Product 2">
+            <div class="product-details">
+                <h2 class="product-name">Название продукта 2</h2>
+                <p class="product-description">Описание продукта 2</p>
+                <p class="product-price">Цена: $15</p>
+                <a class="buy-button" href="buy.php?id=2">Купить</a>
+            </div>
+        </div>
+
+        <!-- Добавьте другие продукты здесь -->
+
+    </div>
 </body>
 </html>
